@@ -1,0 +1,18 @@
+﻿@model IEnumerable<LayoutEflyer_master.Models.Entities.PhanLoai>
+    @foreach (var item in Model)
+    {
+        <a class="dropdown-item item" href="#" id="@item.MaPhanLoai">@item.PhanLoaiChinh</a>
+    }
+<script>
+
+    $(".item").click(function () {
+        var maloai = $(this).attr("id");
+        $.ajax({
+            url: "RenderProductByMenu",
+            data: { maloai: maloai },
+            success: function (res) {
+                $("div#content").html(res);
+            }
+        });
+    });
+</script>
