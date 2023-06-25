@@ -1,0 +1,62 @@
+﻿
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Shoppers &mdash; Colorlib e-Commerce Template</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Mukta:300,400,700">
+    <link rel="stylesheet" href="~/Content/fonts/icomoon/style.css">
+
+    <link rel="stylesheet" href="~/Content/css/bootstrap.min.css">
+    <link rel="stylesheet" href="~/Content/css/magnific-popup.css">
+    <link rel="stylesheet" href="~/Content/css/jquery-ui.css">
+    <link rel="stylesheet" href="~/Content/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="~/Content/css/owl.theme.default.min.css">
+
+
+    <link rel="stylesheet" href="~/Content/css/aos.css">
+
+    <link rel="stylesheet" href="~/Content/css/style.css">
+
+</head>
+<body>
+    <div class="site-wrap">
+        @Html.Partial("_Header")
+
+
+        <div class="site-section">
+            @RenderBody()
+        </div>
+        @Html.Partial("_Footer")
+
+
+    </div>
+
+    <script src="~/Scripts/js/jquery-3.3.1.min.js"></script>
+    <script src="~/Scripts/js/jquery-ui.js"></script>
+    <script src="~/Scripts/js/popper.min.js"></script>
+    <script src="~/Scripts/js/bootstrap.min.js"></script>
+    <script src="~/Scripts/js/owl.carousel.min.js"></script>
+    <script src="~/Scripts/js/jquery.magnific-popup.min.js"></script>
+    <script src="~/Scripts/js/aos.js"></script>
+
+    <script src="~/Scripts/js/main.js"></script>
+
+    <script>
+
+        $(".itemMaPhanLoai").click(function () {
+            var maloai = $(this).attr("id");
+            $.ajax({
+                url: "RenderProductByMenu",
+                data: { maloai: maloai },
+                success: function (res) {
+                    $("#theChua").html(res);
+                }
+            })
+        })
+    </script>
+
+</body>
+</html>

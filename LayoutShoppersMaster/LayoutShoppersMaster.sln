@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.33414.496
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LayoutShoppersMaster", "LayoutShoppersMaster\LayoutShoppersMaster.csproj", "{B67A09C7-C428-4B04-BDCE-05B0B89D145E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B67A09C7-C428-4B04-BDCE-05B0B89D145E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B67A09C7-C428-4B04-BDCE-05B0B89D145E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B67A09C7-C428-4B04-BDCE-05B0B89D145E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B67A09C7-C428-4B04-BDCE-05B0B89D145E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A4599852-CC1F-461C-BB57-8BF572D9E75A}
+	EndGlobalSection
+EndGlobal

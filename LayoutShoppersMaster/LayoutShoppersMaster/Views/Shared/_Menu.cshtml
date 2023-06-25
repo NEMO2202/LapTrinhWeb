@@ -1,0 +1,11 @@
+﻿@model IEnumerable<LayoutShoppersMaster.Models.Entities.PhanLoai>
+<div class="border p-4 rounded mb-4">
+    <h3 class="mb-3 h6 text-uppercase text-black d-block">Categories</h3>
+    <ul class="list-unstyled mb-0">
+        @foreach (var item in Model)
+        {
+            <li class="mb-1"><a href="#" class="d-flex"><span class="itemMaPhanLoai" id="@item.MaPhanLoai">@item.PhanLoaiChinh</span> <span class="text-black ml-auto">(2,220)</span></a></li>
+        }
+       
+    </ul>
+</div>
