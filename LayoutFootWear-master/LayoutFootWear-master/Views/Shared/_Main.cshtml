@@ -1,0 +1,57 @@
+﻿
+<div class="breadcrumbs">
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <p class="bread"><span><a href="index.html">Home</a></span> / <span>Men</span></p>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<div class="breadcrumbs-two">
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <div class="breadcrumbs-img" style="background-image: url(/images/cover-img-1.jpg);">
+                    <h2>Men's</h2>
+                </div>
+                @Html.Action("RenderMenu", "FootwearMaster")
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="colorlib-featured">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-4 text-center">
+                <div class="featured">
+                    <div class="featured-img featured-img-2" style="background-image: url(/images/men.jpg);">
+                        <h2>Casuals</h2>
+                        <p><a href="#" class="btn btn-primary btn-lg">Shop now</a></p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4 text-center">
+                <div class="featured">
+                    <div class="featured-img featured-img-2" style="background-image: url(/images/women.jpg);">
+                        <h2>Dress</h2>
+                        <p><a href="#" class="btn btn-primary btn-lg">Shop now</a></p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4 text-center">
+                <div class="featured">
+                    <div class="featured-img featured-img-2" style="background-image: url(/images/item-11.jpg);">
+                        <h2>Sports</h2>
+                        <p><a href="#" class="btn btn-primary btn-lg">Shop now</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@Html.Action("RenderProduct", "FootwearMaster")
+

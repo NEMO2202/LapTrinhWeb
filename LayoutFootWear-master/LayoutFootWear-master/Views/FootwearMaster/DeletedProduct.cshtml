@@ -1,0 +1,143 @@
+﻿@model LayoutFootWear_master.Models.Entities.SanPham
+
+@{
+    ViewBag.Title = "DeletedProduct";
+    Layout = "~/Views/Shared/LayoutFootWearMaster.cshtml";
+}
+
+<h2>Xóa Sản Phẩm </h2>
+
+<h3>Bạn Có muốn xóa sản phẩm này không?</h3>
+<div>
+    <hr />
+    @using (Html.BeginForm("DeletedConfirm", "FootwearMaster", new { id = Model.MaSanPham }, FormMethod.Post))
+    {
+        @Html.AntiForgeryToken()
+<dl class="dl-horizontal">
+    <dt>
+        @Html.Label("Phân Loại Chính")
+    </dt>
+
+    <dd>
+        @Html.DisplayFor(model => model.PhanLoai.PhanLoaiChinh)
+    </dd>
+
+    <dt>
+        @Html.Label("Phân Loại Phụ ")
+    </dt>
+
+    <dd>
+        @Html.DisplayFor(model => model.PhanLoaiPhu.TenPhanLoaiPhu)
+    </dd>
+
+    <dt>
+        @Html.Label("Tên Sản Phẩm ")
+    </dt>
+
+    <dd>
+        @Html.DisplayFor(model => model.TenSanPham)
+    </dd>
+
+    <dt>
+        @Html.Label("Giá Nhập ")
+    </dt>
+
+    <dd>
+        @Html.DisplayFor(model => model.GiaNhap)
+    </dd>
+
+    <dt>
+        @Html.Label("Đơn Giá Bán Nhỏ Nhất ")
+    </dt>
+    <dd>
+    <dt>
+        @Html.Label("Mã Phân Loại ")
+        <div class="col-md-10">
+            @{
+                LayoutFootWear_master.Models.Entities.Shoes dp = new LayoutFootWear_master.Models.Entities.Shoes();
+                var hang = dp.PhanLoais.ToList();
+                <select name="MaPhanLoai">
+                    @foreach (var item in hang)
+                    {
+                        <option value="@item.MaPhanLoai">@item.PhanLoaiChinh</option>
+                    }
+
+                </select>
+            }
+        </div>
+    </dt>
+    @Html.DisplayFor(model => model.PhanLoai.MaPhanLoai)
+    </dd>
+    <dd>
+    <dt>
+        @Html.Label("Mã Phân Loại Phụ ")
+        <div class="col-md-10">
+            @{
+                LayoutFootWear_master.Models.Entities.Shoes dp1 = new LayoutFootWear_master.Models.Entities.Shoes();
+                var hang1 = dp1.PhanLoaiPhus.ToList();
+                <select name="MaPhanLoaiPhu">
+                    @foreach (var item in hang1)
+                    {
+                        <option value="@item.MaPhanLoaiPhu">@item.TenPhanLoaiPhu</option>
+                    }
+
+                </select>
+            }
+        </div>
+    </dt>
+    @Html.DisplayFor(model => model.PhanLoai.MaPhanLoai)
+    </dd>
+    <dd>
+        @Html.DisplayFor(model => model.DonGiaBanNhoNhat)
+    </dd>
+
+    <dt>
+        @Html.Label("Đơn Giá Bán Lớn Nhất ")
+    </dt>
+
+    <dd>
+        @Html.DisplayFor(model => model.DonGiaBanLonNhat)
+    </dd>
+
+    <dt>
+        @Html.Label("Trạng Thái ")
+    </dt>
+
+    <dd>
+        @Html.DisplayFor(model => model.TrangThai)
+    </dd>
+
+    <dt>
+        @Html.Label("Mô tả Ngắn ")
+    </dt>
+
+    <dd>
+        @Html.DisplayFor(model => model.MoTaNgan)
+    </dd>
+
+    <dt>
+        @Html.Label("Ảnh Đại Diện")
+    </dt>
+
+    <dd>
+        @Html.DisplayFor(model => model.AnhDaiDien)
+    </dd>
+
+    <dt>
+        @Html.Label("Nổi Bật ")
+    </dt>
+
+    <dd>
+        @Html.DisplayFor(model => model.NoiBat)
+    </dd>
+
+</dl>
+
+
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Trở về ", "Index")
+        </div>
+    }
+</div>
