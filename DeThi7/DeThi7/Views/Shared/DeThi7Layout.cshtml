@@ -1,0 +1,74 @@
+﻿
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <!-- Title -->
+    <title>Alazea - Gardening &amp; Landscaping HTML Template</title>
+    <link href="~/Content/scss/style.css" rel="stylesheet" />
+    <!-- Favicon -->
+    <link rel="icon" href="~/img/core-img/favicon.ico">
+
+    <link href="~/Content/scss/style.css" rel="stylesheet" />
+    <!-- Core Stylesheet -->
+    <link href="~/Content/style.css" rel="stylesheet" />
+    <link rel="stylesheet" href="~/Content/scss/style.scss">
+    @Scripts.Render("~/bundles/jquery")
+</head>
+
+<body>
+    <!-- Preloader -->
+    <div class="preloader d-flex align-items-center justify-content-center">
+        <div class="preloader-circle"></div>
+        <div class="preloader-img">
+            <img src="~/img/core-img/leaf.png" alt="">
+        </div>
+    </div>
+
+    <!-- ##### Header Area Start ##### -->
+    @Html.Partial("_Header")
+    <!-- ##### Header Area End ##### -->
+    <!-- ##### Hero Area Start ##### -->
+    @Html.Partial("_HeroServerAbout")
+    <!-- ##### About Area End ##### -->
+    <!-- ##### Portfolio Area Start ##### -->
+<section class="alazea-portfolio-area section-padding-100-0">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <!-- Section Heading -->
+                <div class="section-heading text-center">
+                    <h2>OUR PORTFOLIO</h2>
+                    <p>Trần Trọng Nhân , Công nghệ thông tin k61</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid">
+        @RenderBody()
+        <
+</section>
+        <!-- ##### Portfolio Area End ##### -->
+        <!-- ##### Testimonial Area Start ##### -->
+      
+        <!-- ##### Footer Area End ##### -->
+        <!-- ##### All Javascript Files ##### -->
+        <!-- jQuery-2.2.4 js -->
+        <script src="~/Scripts/js/jquery/jquery-2.2.4.min.js"></script>
+        <!-- Popper js -->
+        <script src="~/Scripts/js/bootstrap/popper.min.js"></script>
+        <!-- Bootstrap js -->
+        <script src="~/Scripts/js/bootstrap/bootstrap.min.js"></script>
+        <!-- All Plugins js -->
+        <script src="~/Scripts/js/plugins/plugins.js"></script>
+        <!-- Active js -->
+        <script src="~/Scripts/js/active.js"></script>
+</body>
+
+</html>

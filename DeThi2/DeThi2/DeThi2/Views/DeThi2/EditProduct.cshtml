@@ -1,0 +1,127 @@
+﻿@model DeThi2.Models.Entities.SanPham
+
+@{
+    ViewBag.Title = "EditProduct";
+    Layout = "~/Views/Shared/DeThi2Layout.cshtml";
+}
+
+<h2>Chỉnh Sửa Sản Phẩm</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        <h4>Sản Phẩm </h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @Html.HiddenFor(model => model.MaSanPham)
+
+    <div class="form-group">
+        @Html.Label("Tên Sản Phẩm")
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.TenSanPham, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.TenSanPham, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+        <div class="form-group">
+            @Html.Label( "Mã Phân Loại ")
+            <div class="col-md-10">
+                @{
+                      
+                    <select name="MaPhanLoai">
+                        @foreach (var item in ViewBag.MaPhanLoai)
+                        {
+                            <option value="@item.MaPhanLoai">@item.PhanLoaiChinh</option>
+                        }
+                    </select>
+                }
+               
+                @Html.ValidationMessageFor(model => model.PhanLoai, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.Label("Giá Nhập ")
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.GiaNhap, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.GiaNhap, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.Label("Đơn Giá bán nhỏ nhất ")
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.DonGiaBanNhoNhat, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.DonGiaBanNhoNhat, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.Label("Đơn Giá Bán Lớn Nhất ")
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.DonGiaBanLonNhat, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.DonGiaBanLonNhat, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.Label("Trang Thái ")
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.TrangThai, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.TrangThai, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.Label("Mô Tả Ngắn")
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.MoTaNgan, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.MoTaNgan, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.Label("Ảnh Đại Diện ")
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.AnhDaiDien, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.AnhDaiDien, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.Label("Nổi Bật ")
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.NoiBat, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.NoiBat, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.Label("Mã Phân Loại Phụ  ")
+            <div class="col-md-10">
+                @{
+
+                    <select name="MaPhanLoaiPhu">
+                        @foreach (var item in ViewBag.MaPhanLoaiPhu)
+                        {
+                            <option value="@item.MaPhanLoaiPhu">@item.TenPhanLoaiPhu</option>
+                        }
+                    </select>
+                }
+                @Html.ValidationMessageFor(model => model.MaPhanLoaiPhu, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Trở về ", "Index")
+</div>

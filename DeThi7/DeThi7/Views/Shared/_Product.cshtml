@@ -1,0 +1,22 @@
+﻿@model IEnumerable<DeThi7.Models.Entities.SanPham>
+
+<div id="contentmd">
+    @foreach (var item in Model)
+    {
+        <!-- Single Portfolio Area -->
+        <div class="col-12 col-sm-6 col-lg-3 single_portfolio_item design home-design wow fadeInUp" data-wow-delay="100ms">
+            <!-- Portfolio Thumbnail -->
+            <div class="portfolio-thumbnail bg-img" style="background-image: url(/img/bg-img/@item.AnhDaiDien);"></div>
+            <!-- Portfolio Hover Text -->
+            <div class="portfolio-hover-overlay">
+                <a href="@Url.Action("ProductDetail","DeThi7",new { id = item.MaSanPham })" class=" d-flex align-items-center justify-content-center" title="Portfolio 1">
+                    <div class="port-hover-text">
+                        <h3>@item.TenSanPham</h3>
+                        <h5>@item.DonGiaBanNhoNhat</h5>
+                    </div>
+                </a>
+            </div>
+        </div>
+    }
+
+</div>

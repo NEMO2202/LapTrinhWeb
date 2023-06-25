@@ -1,0 +1,119 @@
+﻿@model DeThi8.Models.Entities.SanPham
+
+@{
+    ViewBag.Title = "DeletedProduct";
+    Layout = "~/Views/Shared/DeThi8Layout.cshtml";
+}
+
+@using (Html.BeginForm("DeletedConfirm", "DeThi8", new { id = Model.MaSanPham }, FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+
+    <dd>
+        <dt>
+            @Html.DisplayName("Tên Phân Loại Chính")
+        </dt>
+        @Html.DisplayFor(model => model.PhanLoai.PhanLoaiChinh)
+    </dd>
+    <dd>
+        <br />
+    <dd>
+        <dt>
+            @Html.Label("Mã Phân Loại ")
+            <div class="col-md-10">
+                @{
+                    DeThi8.Models.Entities.ChauCanh dp1 = new DeThi8.Models.Entities.ChauCanh();
+                    var hang2 = dp1.PhanLoais.ToList();
+                    <select name="MaPhanLoai">
+                        @foreach (var item in hang2)
+                        {
+                            <option value="@item.MaPhanLoai">@item.PhanLoaiChinh</option>
+                        }
+
+                    </select>
+                }
+        </dt>
+        @Html.DisplayFor(model => model.PhanLoai.MaPhanLoai)
+    </dd>
+    <br />
+    <dt>
+        @Html.DisplayName("Tên Phân Loại Phụ")
+    </dt>
+    @Html.DisplayFor(model => model.PhanLoaiPhu.TenPhanLoaiPhu)
+    </dd>
+    <br />
+   @* <dd>
+        <dt>
+            @Html.Label("Mã Phân Loại Phụ ")
+            <div class="col-md-10">
+                @{
+                    DeThi8.Models.Entities.ChauCanh dp = new DeThi8.Models.Entities.ChauCanh();
+                    var hang = dp.PhanLoaiPhus.ToList();
+                    <select name="MaPhanLoaiPhu">
+                        @foreach (var item in hang)
+                        {
+                            <option value="@item.MaPhanLoaiPhu">@item.TenPhanLoaiPhu</option>
+                        }
+
+                    </select>
+                }
+        </dt>
+        @Html.DisplayFor(model => model.PhanLoaiPhu.MaPhanLoaiPhu)
+    </dd>*@
+    <br />
+    <dd>
+        <dt>
+            @Html.DisplayName("Tên Sản Phẩm")
+        </dt>
+        @Html.DisplayFor(model => model.TenSanPham)
+    </dd>
+    <dd>
+        <dt>
+            @Html.DisplayName("Giá Nhập")
+        </dt>
+        @Html.DisplayFor(model => model.GiaNhap)
+    </dd>
+    <dd>
+        <dt>
+            @Html.DisplayName("Giá Bán Nhỏ Nhất")
+        </dt>
+        @Html.DisplayFor(model => model.DonGiaBanNhoNhat)
+    </dd>
+    <dd>
+        <dt>
+            @Html.DisplayName("Giá Bán Lớn nhất")
+        </dt>
+        @Html.DisplayFor(model => model.DonGiaBanLonNhat)
+    </dd>
+    <dd>
+        <dt>
+            @Html.DisplayName("Trạng Thái ")
+        </dt>
+        @Html.DisplayFor(model => model.TrangThai)
+    </dd>
+    <dd>
+        <dt>
+            @Html.DisplayName("Mô Tả Ngắn ")
+        </dt>
+        @Html.DisplayFor(model => model.MoTaNgan)
+    </dd>
+    <dd>
+        <dt>
+            @Html.DisplayName("Ảnh Đại Diện ")
+        </dt>
+        @Html.DisplayFor(model => model.AnhDaiDien)
+    </dd>
+    <dd>
+        <dt>
+            @Html.DisplayName("Nổi Bật ")
+        </dt>
+        @Html.DisplayFor(model => model.NoiBat)
+    </dd>
+
+    <dd>
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" />
+            @Html.ActionLink("Trở về ", "Index")
+        </div>
+    </dd>
+}

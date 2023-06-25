@@ -1,0 +1,20 @@
+﻿@model IEnumerable<DeThi1.Models.SanPham>
+<div id="content">
+    @foreach (var item in Model)
+    {
+        <div class="product-item">
+            <div class="product discount">
+                <div class="product_image">
+                    <img src="~/images/@item.AnhDaiDien" alt="">
+                </div>
+                <div class="favorite favorite_left"></div>
+                <div class="product_bubble product_bubble_right product_bubble_red d-flex flex-column align-items-center"><span>-$20</span></div>
+                <div class="product_info">
+                    <h6 class="product_name"><a href="single.html">@item.TenSanPham</a></h6>
+                    <div class="product_price">$520.00<span>@item.DonGiaBanNhoNhat</span></div>
+                </div>
+            </div>
+            <div class="red_button add_to_cart_button"><a href="@Url.Action("AddProduct","DeThi1",new {id = item.MaSanPham})">Thêm một sản phẩm mới</a></div>
+        </div>
+    }
+</div>

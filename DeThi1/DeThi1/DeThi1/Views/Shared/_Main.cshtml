@@ -1,0 +1,30 @@
+﻿
+<div class="container">
+    <div class="row">
+        <div class="col text-center">
+            <div class="section_title new_arrivals_title">
+                <h2>New Arrivals</h2>
+                <h5>Trần Trong Nhân, Công nghệ thông tin K61</h5>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="row align-items-center">
+        @Html.Action("RenderMenu", "DeThi1")
+    </div>
+
+
+    <div class="row">
+        <div class="col">
+            <div class="product-grid " data-isotope='{ "itemSelector": ".product-item"}'>
+
+                <!-- Product 1 -->
+                @Html.Action("RenderProduct") 
+               
+
+         
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,35 @@
+﻿@model IEnumerable<DeThi8.Models.Entities.SanPham>
+<div class="products-catagories-area clearfix">
+    <div  class="amado-pro-catagory clearfix">
+        <div id="content">
+                @foreach (var item in Model)
+                {
+                    <!-- Single Catagory -->
+                    <div class="single-products-catagory clearfix">
+                        <a href="@Url.Action("DetailProduct","DeThi8",new {id = item.MaSanPham})">
+                            <img src="~/img/product-img/@item.AnhDaiDien" alt="">
+                            <!-- Hover Content -->
+                            <div class="hover-content">
+                                <div class="line"></div>
+                                <p>@item.DonGiaBanNhoNhat</p>
+                                <h4>@item.TenSanPham</h4>
+                            </div>
+                        </a>
+                    </div>
+                }
+         </div>
+    </div>
+ </div>
+<script>
+    
+    $(".itemMaPhanLoaiPhu").click(function () {
+        var maloai = $(this).attr("id");
+        $.ajax({
+            url: "RenderProductByMenu",
+            data: { maloai: maloai },
+            success: function (res) {
+                $("div#content").html(res);
+            }
+        })
+    })
+</script> 

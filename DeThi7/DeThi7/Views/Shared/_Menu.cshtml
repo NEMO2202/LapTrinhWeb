@@ -1,0 +1,18 @@
+﻿@model IEnumerable<DeThi7.Models.Entities.PhanLoai>
+
+    <div class="col-12">
+        <div class="alazea-portfolio-filter">
+            <div class="portfolio-filter">
+                <button class="btn active" data-filter="*">All</button>
+                @foreach (var item in Model)
+                {
+                    <button class="btn itemtem" id="@item.MaPhanLoai">@item.PhanLoaiChinh</button>
+
+                }
+            </div>
+        </div>
+    </div>
+
+
+
+

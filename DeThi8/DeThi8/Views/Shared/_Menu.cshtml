@@ -1,0 +1,9 @@
+﻿@model IEnumerable<DeThi8.Models.Entities.PhanLoaiPhu>
+<nav class="amado-nav">
+    <ul>
+        @foreach (var item in Model)
+        {
+          <li class="active itemMaPhanLoaiPhu" id="@item.MaPhanLoaiPhu"><a>@item.TenPhanLoaiPhu</a></li>
+        }
+    </ul>
+</nav>
